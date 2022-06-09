@@ -17,10 +17,11 @@ Route::get('/kontrol', function () {
     return view('kontrol');
 })->name('kontrol');
 
-Route::get('/dashboard', function () {
+Route::get('/', function () {
     return view('dashboard');
 })->name('dashboard');
 
 Route::get('/tentang', function () {
     return view('tentang');
 })->name('tentang');
+
