@@ -13,11 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('usages', function (Blueprint $table) {
-            $table->id('id_usage');
-            $table->foreignId('tool_id')->index();
-            $table->integer('water_remaining');
-            $table->timestamp('time');
+        Schema::create('tools', function (Blueprint $table) {
+            $table->id();
+            $table->foreignId('user_id');
+            $table->text('description');
+            $table->timestamps();
         });
     }
 
@@ -28,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('usages');
+        Schema::dropIfExists('tools');
     }
 };

@@ -5,21 +5,19 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Usage extends Model
+class Temperature extends Model
 {
     use HasFactory;
-
-    protected $table = 'usages';
-
-    protected $primaryKey = 'id_usage';
-
+    protected $table = 'temperatures';
     protected $fillable = [
         'user_id',
-        'water_remaining',
+        'current_temperature',
     ];
 
-    public function usage()
+    public function temperature()
     {
         return $this->belongsTo(Tool::class, 'tool_id', 'id');
     }
 }
+
+

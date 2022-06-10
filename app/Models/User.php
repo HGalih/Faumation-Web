@@ -41,9 +41,9 @@ class User extends Authenticatable
         'two_factor_secret',
     ];
 
-    public function usages()
+    public function tool()
     {
-        return $this->hasOne(Usage::class, 'id_user', 'id');
+        return $this->hasMany(Tool::class, 'id_user', 'id');
     }
 
     /**
