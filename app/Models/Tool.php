@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Tool extends Model
 {
     use HasFactory;
+
     protected $table = 'tools';
 
     protected $fillable = [
@@ -15,14 +16,16 @@ class Tool extends Model
         'description',
     ];
 
-    public function tool()
+    public function user()
     {
         return $this->belongsTo(User::class, 'user_id', 'id');
     }
+
     public function usage()
     {
-        return $this->hasMany(usage::class, 'tool_id', 'id_usage');
+        return $this->hasMany(usage::class, 'tool_id', 'id');
     }
+    
     public function temperature()
     {
         return $this->hasMany(usage::class, 'tool_id', 'id');

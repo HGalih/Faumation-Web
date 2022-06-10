@@ -18,7 +18,7 @@ class Usage extends Model
         'water_remaining',
     ];
 
-    public function usage()
+    public function tool()
     {
         return $this->belongsTo(Tool::class, 'tool_id', 'id');
     }

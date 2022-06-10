@@ -13,11 +13,16 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('temperatures', function (Blueprint $table) {
+        Schema::create('usages', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('tool_id');
-            $table->integer('current_temperature');
-            $table->timestamps();
+            $table->foreignId('tool_id')
+                ->references('id')
+                ->on('tools')
+                ->constrained()
+                ->cascadeOnDelete()
+                ->cascadeOnUpdate();
+            $table->integer('water_remaining');
+            $table->timestamp('time');
         });
     }
 
@@ -28,6 +33,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('temperatures');
+        Schema::dropIfExists('usages');
     }
 };
