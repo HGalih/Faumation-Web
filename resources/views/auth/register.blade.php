@@ -1,7 +1,7 @@
 <x-guest-layout>
     <x-jet-authentication-card>
         <x-slot name="logo">
-            <x-jet-authentication-card-logo />
+        <img class="h-48 w-48" src="{{asset('img/dropbig.png')}}">
         </x-slot>
 
         <x-jet-validation-errors class="mb-4" />
@@ -47,7 +47,7 @@
             @endif
 
             <div class="flex items-center justify-end mt-4">
-                <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('login') }}">
+                <a class="underline text-sm text-white hover:text-blue-100" href="{{ route('login') }}">
                     {{ __('Already registered?') }}
                 </a>
 

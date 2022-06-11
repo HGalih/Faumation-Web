@@ -13,15 +13,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/kontrol', function () {
-    return view('kontrol');
-})->name('kontrol');
 
-Route::get('/', function () {
-    return view('dashboard');
-})->name('dashboard');
 
-Route::get('/tentang', function () {
-    return view('tentang');
-})->name('tentang');
-
+Route::group(['middleware' => ['auth']], function () { 
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
+    
+    Route::get('/', function () {
+        return view('kontrol');
+    })->name('kontrol');
+    
+    Route::get('/tentang', function () {
+        return view('tentang');
+    })->name('tentang');
+});

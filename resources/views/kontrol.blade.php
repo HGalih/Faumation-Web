@@ -50,7 +50,7 @@
   </div>
   <div class="border-t text-center border-gray-900 px-4 py-5">
     <img class="h-48 mx-auto" src="{{asset('img/termo.png')}}">
-    <span class="inline-flex mt-3 items-center px-2.5 py-0.5 rounded-md text-sm statusPemanas  bg-blue-100 text-blue-800 font-bold"> Off </span>
+    <span class="inline-flex mt-3 items-center px-2.5 py-0.5 rounded-md text-sm statusPemanas  bg-red-400 text-red-100 font-bold"> Off </span>
     <h3 class="mt-3 text-2xl">Temperatur Air: <span class="font-bold suhu">21</span> °C</h3>
   </div>
   
@@ -104,7 +104,7 @@
   </div>
   <div class="border-t text-center border-gray-900 px-4 py-5">
     <img class="h-48 mx-auto" src="{{asset('img/termo.png')}}">
-    <span class="inline-flex mt-3 statusPemanas items-center px-2.5 py-0.5 rounded-md text-sm  bg-blue-100 text-blue-800 font-bold"> Off </span>
+    <span class="inline-flex mt-3 statusPemanas items-center px-2.5 py-0.5 rounded-md text-sm  bg-red-400 text-red-100 font-bold"> Off </span>
     <h3 class="mt-3 text-2xl">Temperatur Air: <span class="font-bold suhu">21</span>°C</h3>
   </div>
   <label for="price" class="block mt-3 text-sm font-bold text-white">Simulasikan Pemanasan Air</label>
@@ -121,8 +121,7 @@
     
   </div>
   <button type="button" onClick="setSuhu()" class="block mx-auto mb-3 items-center px-4 py-2 border border-transparent text-sm leading-4 font-medium rounded-md shadow-sm text-black bg-red-400 hover:bg-red-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500">Atur Temperatur Air</button>
-  <button onClick="pemanasOn()" type="button" class="relative inline-flex items-center px-4 py-2 rounded-l-md  bg-blue-400 text-sm font-medium text-gray-900 hover:bg-blue-500 focus:z-10 focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500">Nyalakan Pemanas</button>
-  <button onClick="pemanasOff()" type="button" class="-ml-px relative inline-flex items-center px-4 py-2 rounded-r-md   bg-black text-sm font-medium text-white hover:bg-gray-800 focus:z-10 focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500">Matikan Pemanas</button>
+  <button onClick="pemanasOn()" type="button" class="relative inline-flex items-center px-4 py-2 rounded-l-md  bg-blue-400 text-sm font-medium text-gray-900 hover:bg-blue-500 focus:z-10 focus:outline-none focus:ring-1 focus:ring-indigo-500  focus:border-indigo-500">Nyalakan Pemanas</button><button onClick="pemanasOff()" type="button" class="-ml-px relative inline-flex items-center px-4 py-2 rounded-r-md   bg-black text-sm font-medium text-white hover:bg-gray-800 focus:z-10 focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500">Matikan Pemanas</button>
 </div>
 
 
