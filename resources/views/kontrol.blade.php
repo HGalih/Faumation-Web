@@ -51,9 +51,8 @@
   <div class="border-t text-center border-gray-900 px-4 py-5">
     <img class="h-48 mx-auto" src="{{asset('img/termo.png')}}">
     <span class="inline-flex mt-3 items-center px-2.5 py-0.5 rounded-md text-sm statusPemanas  bg-blue-100 text-blue-800 font-bold"> Off </span>
-    <h3 class="mt-3 text-2xl">Temperatur Air: <span class="font-bold">21°C</span></h3>
+    <h3 class="mt-3 text-2xl">Temperatur Air: <span class="font-bold suhu">21</span> °C</h3>
   </div>
-  <button type="button" class="inline-flex mb-3 items-center px-4 py-2 border border-transparent text-sm leading-4 font-medium rounded-md shadow-sm text-black bg-red-400 hover:bg-red-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500">X Hentikan Pemanasan Air</button>
   
 </div>
 </div>
@@ -79,6 +78,7 @@
     <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
     </div>
     <input type="text" name="price" id="inputAir" class="focus:ring-indigo-200 mb-3 focus:border-indigo-300 block w-full pl-7 pr-12 sm:text-sm border-white bg-gray-700 rounded-md" placeholder="0.00" aria-describedby="price-currency">
+    <p class="mt-2 text-sm bg-red-100 py-2 mb-2 hidden text-red-800" id="errorAir">Tidak dapat mengisi air diatas 90% </p>   
     <div class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
       <span class="text-gray-500 sm:text-sm" id="price-currency">%</span>
     </div>
@@ -90,7 +90,7 @@
   
   <span class="relative z-0 mb-4 inline-flex shadow-sm rounded-md text-center">
   <button onClick="airOn()" type="button" class="relative inline-flex items-center px-4 py-2 rounded-l-md  bg-blue-400 text-sm font-medium text-gray-900 hover:bg-blue-500 focus:z-10 focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500">Nyalakan Keran</button>
-  <button onClick="airOff()" type="button" class="-ml-px relative inline-flex items-center px-4 py-2 rounded-r-md   bg-black text-sm font-medium text-white hover:bg-gray-800 focus:z-10 focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500">Matikan Keran</button>
+<button onClick="airOff()" type="button" class="-ml-px relative inline-flex items-center px-4 py-2 rounded-r-md   bg-black text-sm font-medium text-white hover:bg-gray-800 focus:z-10 focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500">Matikan Keran</button>
 </span>
 </div>
 
@@ -105,7 +105,7 @@
   <div class="border-t text-center border-gray-900 px-4 py-5">
     <img class="h-48 mx-auto" src="{{asset('img/termo.png')}}">
     <span class="inline-flex mt-3 statusPemanas items-center px-2.5 py-0.5 rounded-md text-sm  bg-blue-100 text-blue-800 font-bold"> Off </span>
-    <h3 class="mt-3 text-2xl">Temperatur Air: <span class="font-bold">21°C</span></h3>
+    <h3 class="mt-3 text-2xl">Temperatur Air: <span class="font-bold suhu">21</span>°C</h3>
   </div>
   <label for="price" class="block mt-3 text-sm font-bold text-white">Simulasikan Pemanasan Air</label>
   <label for="price" class="block text-sm mb-2 font-medium text-white">Masukkan angka temperatur celcius</label>
@@ -113,14 +113,16 @@
   <div class="mt-1 relative rounded-md shadow-sm">
     <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
     </div>
-    <input type="text" name="price" id="price" class="focus:ring-indigo-200 mb-3 focus:border-indigo-300 block w-full pl-7 pr-12 sm:text-sm border-white bg-gray-700 rounded-md" placeholder="0.00" aria-describedby="price-currency">
+    <input type="text" name="price" id="inputSuhu" class="focus:ring-indigo-200 mb-3 focus:border-indigo-300 block w-full pl-7 pr-12 sm:text-sm border-white bg-gray-700 rounded-md" placeholder="0.00" aria-describedby="price-currency">
+    <p class="mt-2 text-sm hidden bg-red-100 py-2 mb-2 none text-red-800" id="errorSuhu">Tidak dapat memanaskan air diatas 40°C </p>
     <div class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
       <span class="text-gray-500 sm:text-sm" id="price-currency">°C</span>
     </div>
     
   </div>
-  <button type="button" class="inline-flex mb-3 items-center px-4 py-2 border border-transparent text-sm leading-4 font-medium rounded-md shadow-sm text-black bg-red-400 hover:bg-red-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500">X Hentikan Pemanasan Air</button>
-
+  <button type="button" onClick="setSuhu()" class="block mx-auto mb-3 items-center px-4 py-2 border border-transparent text-sm leading-4 font-medium rounded-md shadow-sm text-black bg-red-400 hover:bg-red-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500">Atur Temperatur Air</button>
+  <button onClick="pemanasOn()" type="button" class="relative inline-flex items-center px-4 py-2 rounded-l-md  bg-blue-400 text-sm font-medium text-gray-900 hover:bg-blue-500 focus:z-10 focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500">Nyalakan Pemanas</button>
+  <button onClick="pemanasOff()" type="button" class="-ml-px relative inline-flex items-center px-4 py-2 rounded-r-md   bg-black text-sm font-medium text-white hover:bg-gray-800 focus:z-10 focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500">Matikan Pemanas</button>
 </div>
 
 
@@ -151,9 +153,14 @@ function openCity(evt, tabName) {
 
 <script>
   var sisaAir = 25
+  var suhu = 20
   document.getElementsByClassName("sisaAir")[1].innerHTML = sisaAir;
   document.getElementsByClassName("sisaAir")[0].innerHTML = sisaAir;
+  document.getElementsByClassName("suhu")[1].innerHTML = suhu;
+  document.getElementsByClassName("suhu")[0].innerHTML = suhu;
   var running;
+  var running2;
+
 
 function airOn(){
   if(sisaAir<91){
@@ -172,6 +179,50 @@ function airOn(){
 }
 }
 
+
+function pemanasOn(){
+  if(suhu<41){
+  document.getElementsByClassName("statusPemanas")[1].innerHTML = "On";
+  document.getElementsByClassName("statusPemanas")[0].innerHTML = "On";
+  
+  running2 = window.setInterval(function () {
+  if(suhu<41){  
+  suhu = suhu + 0.5;
+  document.getElementsByClassName("suhu")[1].innerHTML = suhu;
+  document.getElementsByClassName("suhu")[0].innerHTML = suhu;
+  }else{
+    pemanasOff()
+  }
+  }, 3000);
+}
+}
+
+function pemanasOff(){
+  if(suhu>20){
+  window.clearInterval(running2)
+  document.getElementsByClassName("statusPemanas")[1].innerHTML = "Off";
+  document.getElementsByClassName("statusPemanas")[0].innerHTML = "Off";
+  }
+}
+
+function setSuhu(){
+  if(parseInt(document.getElementById("inputSuhu").value) <40){
+  suhu = parseInt(document.getElementById("inputSuhu").value)
+  document.getElementsByClassName("suhu")[1].innerHTML = suhu;
+  document.getElementById("errorSuhu").className = document.getElementById("errorAir").className.replace("good","hidden")
+  document.getElementsByClassName("suhu")[0].innerHTML = suhu;
+  if(suhu>20){
+    pemanasOff()
+  }else if(sisaAir<40){
+    pemanasOn()
+  }
+}else{
+  document.getElementById("errorSuhu").className = document.getElementById("errorAir").className.replace("hidden","good")
+    console.log("harusnya muncul")
+  }
+}
+
+
 function airOff(){
   if(sisaAir>10){
   window.clearInterval(running)
@@ -181,13 +232,20 @@ function airOff(){
 }
 
 function setAir(){
-  sisaAir = parseInt(document.getElementById("inputAir").value)
-  document.getElementsByClassName("sisaAir")[1].innerHTML = sisaAir;
+ 
+  if(parseInt(document.getElementById("inputAir").value) <91){
+    sisaAir = parseInt(document.getElementById("inputAir").value)
+    document.getElementById("errorAir").className = document.getElementById("errorAir").className.replace("good","hidden")
+    document.getElementsByClassName("sisaAir")[1].innerHTML = sisaAir;
   document.getElementsByClassName("sisaAir")[0].innerHTML = sisaAir;
   if(sisaAir>10){
     airOff()
   }else if(sisaAir<90){
     airOn()
+  }
+  }else{
+    document.getElementById("errorAir").className = document.getElementById("errorAir").className.replace("hidden","good")
+    console.log("harusnya muncul")
   }
 }
 
