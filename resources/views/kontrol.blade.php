@@ -36,13 +36,10 @@
   </div>
   <div class="border-t text-center border-gray-900 px-4 py-5">
     <img class="h-48 mx-auto" src="{{asset('img/drop.png')}}">
-    <span class="inline-flex mt-3 items-center px-2.5 py-0.5 rounded-md text-sm  bg-blue-100 text-blue-800 font-bold"> Off </span>
-    <h3 class="mt-3 text-2xl">Sisa Air: <span class="font-bold">30%</span></h3>
+    <span class="inline-flex statusAir mt-3 items-center px-2.5 py-0.5 rounded-md text-sm  bg-blue-100 text-blue-800 font-bold"> Off </span>
+    <h3 class="mt-3 text-2xl">Sisa Air: <span id="" class="font-bold sisaAir">30</span>%</h3>
   </div>
-  <span class="relative z-0 mb-4 inline-flex shadow-sm rounded-md text-center">
-  <button type="button" class="relative inline-flex items-center px-4 py-2 rounded-l-md  bg-blue-400 text-sm font-medium text-gray-900 hover:bg-blue-500 focus:z-10 focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500">Batas Bawah</button>
-  <button type="button" class="-ml-px relative inline-flex items-center px-4 py-2 rounded-r-md   bg-black text-sm font-medium text-white hover:bg-gray-800 focus:z-10 focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500">Batas Atas</button>
-</span>
+  
 </div>
 
 </div>
@@ -53,7 +50,7 @@
   </div>
   <div class="border-t text-center border-gray-900 px-4 py-5">
     <img class="h-48 mx-auto" src="{{asset('img/termo.png')}}">
-    <span class="inline-flex mt-3 items-center px-2.5 py-0.5 rounded-md text-sm  bg-blue-100 text-blue-800 font-bold"> Off </span>
+    <span class="inline-flex mt-3 items-center px-2.5 py-0.5 rounded-md text-sm statusPemanas  bg-blue-100 text-blue-800 font-bold"> Off </span>
     <h3 class="mt-3 text-2xl">Temperatur Air: <span class="font-bold">21°C</span></h3>
   </div>
   <button type="button" class="inline-flex mb-3 items-center px-4 py-2 border border-transparent text-sm leading-4 font-medium rounded-md shadow-sm text-black bg-red-400 hover:bg-red-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500">X Hentikan Pemanasan Air</button>
@@ -71,23 +68,30 @@
   </div>
   <div class="border-t text-center border-gray-900 px-4 py-5">
     <img class="h-48 mx-auto" src="{{asset('img/drop.png')}}">
-    <span class="inline-flex mt-3 items-center px-2.5 py-0.5 rounded-md text-sm  bg-blue-100 text-blue-800 font-bold"> Off </span>
-    <h3 class="mt-3 text-2xl">Sisa Air: <span class="font-bold">30%</span></h3>
+    <span class="inline-flex mt-3 statusAir items-center px-2.5 py-0.5 rounded-md text-sm  bg-blue-100 text-blue-800 font-bold"> Off </span>
+    <h3 class="mt-3 text-2xl">Sisa Air: <span class="font-bold sisaAir">30</span>%</h3>
   </div>
 
   <label for="price" class="block mt-3 text-sm font-bold text-white">Simulasikan Pengisian Air</label>
   <label for="price" class="block text-sm mb-2 font-medium text-white">Masukkan angka sisa air di tempat pengisian air</label>
-  <div class="px-5">
-  <div class="mt-1 relative rounded-md shadow-sm">
+  <div class="px-5 text-center">
+  <div class="mt-1 relative rounded-md cols-span-1 shadow-sm">
     <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
     </div>
-    <input type="text" name="price" id="price" class="focus:ring-indigo-200 mb-3 focus:border-indigo-300 block w-full pl-7 pr-12 sm:text-sm border-white bg-gray-700 rounded-md" placeholder="0.00" aria-describedby="price-currency">
+    <input type="text" name="price" id="inputAir" class="focus:ring-indigo-200 mb-3 focus:border-indigo-300 block w-full pl-7 pr-12 sm:text-sm border-white bg-gray-700 rounded-md" placeholder="0.00" aria-describedby="price-currency">
     <div class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
       <span class="text-gray-500 sm:text-sm" id="price-currency">%</span>
     </div>
     
   </div>
-  <button type="button" class="inline-flex mb-3 items-center px-4 py-2 border border-transparent text-sm leading-4 font-medium rounded-md shadow-sm text-black bg-blue-400 hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white">X Hentikan Pemanasan Air</button>
+
+  <button type="button" onClick="setAir()" class="block mx-auto mb-3 items-center px-4 py-2 border border-transparent text-sm leading-4 font-medium rounded-md shadow-sm text-black bg-blue-400 hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white">Atur Sisa Air</button>
+
+  
+  <span class="relative z-0 mb-4 inline-flex shadow-sm rounded-md text-center">
+  <button onClick="airOn()" type="button" class="relative inline-flex items-center px-4 py-2 rounded-l-md  bg-blue-400 text-sm font-medium text-gray-900 hover:bg-blue-500 focus:z-10 focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500">Nyalakan Keran</button>
+  <button onClick="airOff()" type="button" class="-ml-px relative inline-flex items-center px-4 py-2 rounded-r-md   bg-black text-sm font-medium text-white hover:bg-gray-800 focus:z-10 focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500">Matikan Keran</button>
+</span>
 </div>
 
 </div>
@@ -100,7 +104,7 @@
   </div>
   <div class="border-t text-center border-gray-900 px-4 py-5">
     <img class="h-48 mx-auto" src="{{asset('img/termo.png')}}">
-    <span class="inline-flex mt-3 items-center px-2.5 py-0.5 rounded-md text-sm  bg-blue-100 text-blue-800 font-bold"> Off </span>
+    <span class="inline-flex mt-3 statusPemanas items-center px-2.5 py-0.5 rounded-md text-sm  bg-blue-100 text-blue-800 font-bold"> Off </span>
     <h3 class="mt-3 text-2xl">Temperatur Air: <span class="font-bold">21°C</span></h3>
   </div>
   <label for="price" class="block mt-3 text-sm font-bold text-white">Simulasikan Pemanasan Air</label>
@@ -143,3 +147,51 @@ function openCity(evt, tabName) {
   evt.currentTarget.className = evt.currentTarget.className.replace("text-indigo-300","")
 }
 </script>
+
+
+<script>
+  var sisaAir = 25
+  document.getElementsByClassName("sisaAir")[1].innerHTML = sisaAir;
+  document.getElementsByClassName("sisaAir")[0].innerHTML = sisaAir;
+  var running;
+
+function airOn(){
+  if(sisaAir<91){
+  document.getElementsByClassName("statusAir")[1].innerHTML = "On";
+  document.getElementsByClassName("statusAir")[0].innerHTML = "On";
+  
+  running = window.setInterval(function () {
+  if(sisaAir<91){  
+  sisaAir = sisaAir + 0.5;
+  document.getElementsByClassName("sisaAir")[1].innerHTML = sisaAir;
+  document.getElementsByClassName("sisaAir")[0].innerHTML = sisaAir;
+  }else{
+    airOff()
+  }
+  }, 3000);
+}
+}
+
+function airOff(){
+  if(sisaAir>10){
+  window.clearInterval(running)
+  document.getElementsByClassName("statusAir")[1].innerHTML = "Off";
+  document.getElementsByClassName("statusAir")[0].innerHTML = "Off";
+  }
+}
+
+function setAir(){
+  sisaAir = parseInt(document.getElementById("inputAir").value)
+  document.getElementsByClassName("sisaAir")[1].innerHTML = sisaAir;
+  document.getElementsByClassName("sisaAir")[0].innerHTML = sisaAir;
+  if(sisaAir>10){
+    airOff()
+  }else if(sisaAir<90){
+    airOn()
+  }
+}
+
+
+
+
+  </script>
