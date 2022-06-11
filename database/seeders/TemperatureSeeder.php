@@ -38,5 +38,41 @@ class TemperatureSeeder extends Seeder
             'tool_id' => 4,
             'current_temperature' => 34,
         ]);
+
+        DB::table('temperatures')->insert([
+            'id' => 5,
+            'tool_id' => 4,
+            'current_temperature' => 15,
+        ]);
+
+        DB::table('temperatures')->insert([
+            'id' => 6,
+            'tool_id' => 1,
+            'current_temperature' => 29,
+        ]);
+
+        DB::table('temperatures')->insert([
+            'id' => 7,
+            'tool_id' => 2,
+            'current_temperature' => 21,
+        ]);
+
+        DB::table('temperatures')->insert([
+            'id' => 8,
+            'tool_id' => 3,
+            'current_temperature' => 37,
+        ]);
+
+        DB::table('temperatures')->insert([
+            'id' => 9,
+            'tool_id' => 1,
+            'current_temperature' => 39,
+        ]);
+
+        DB::table('temperatures')->insert([
+            'id' => 10,
+            'tool_id' => 2,
+            'current_temperature' => 30,
+        ]);
     }
 }

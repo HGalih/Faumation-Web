@@ -67,7 +67,7 @@ class UsageSeeder extends Seeder
         DB::table('usages')->insert([
             'id' => 8,
             'tool_id' => 4,
-            'water_remaining' => 80,
+            'water_remaining' => 8,
             'time' => \Carbon\Carbon::now()
         ]);
 

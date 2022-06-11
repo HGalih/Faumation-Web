@@ -36,7 +36,7 @@ class ToolSeeder extends Seeder
         DB::table('tools')->insert([
             'id' => 4,
             'user_id' => 1,
-            'description' => 'Kolam Renang',
+            'description' => 'Bak Mandi 4',
         ]);
     }
 }
