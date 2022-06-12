@@ -50,7 +50,7 @@
   </div>
   <div class="border-t text-center border-gray-900 px-4 py-5">
     <img class="h-48 mx-auto" src="{{asset('img/termo.png')}}">
-    <span class="inline-flex mt-3 items-center px-2.5 py-0.5 rounded-md text-sm statusPemanas  bg-red-400 text-red-100 font-bold"> Off </span>
+    <span class="inline-flex mt-3 items-center px-2.5 py-0.5 rounded-md text-sm statusPemanas  bg-red-100 text-red-800 font-bold"> Off </span>
     <h3 class="mt-3 text-2xl">Temperatur Air: <span class="font-bold suhu">21</span> °C</h3>
   </div>
   
@@ -83,12 +83,13 @@
     <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
     </div>
     <input type="text" name="price" id="inputAir" class="focus:ring-indigo-200 mb-3 focus:border-indigo-300 block w-full pl-7 pr-12 sm:text-sm border-white bg-gray-700 rounded-md" placeholder="0.00" aria-describedby="price-currency">
-    <p class="mt-2 text-sm bg-red-100 py-2 mb-2 hidden text-red-800" id="errorAir">Tidak dapat mengisi air diatas 90% </p>   
     <div class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
       <span class="text-gray-500 sm:text-sm" id="price-currency">%</span>
     </div>
     
   </div>
+  <p class="mt-2 text-sm bg-red-100 py-2 mb-2 hidden text-red-800" id="errorAir">Tidak dapat mengisi air diatas 90% </p>   
+
 
   <button type="button" onClick="setAir()" class="block mx-auto mb-3 items-center px-4 py-2 border border-transparent text-sm leading-4 font-medium rounded-md shadow-sm text-black bg-blue-400 hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white">Atur Sisa Air</button>
 
@@ -109,7 +110,7 @@
   </div>
   <div class="border-t text-center border-gray-900 px-4 py-5">
     <img class="h-48 mx-auto" src="{{asset('img/termo.png')}}">
-    <span class="inline-flex mt-3 statusPemanas items-center px-2.5 py-0.5 rounded-md text-sm  bg-red-400 text-red-100 font-bold"> Off </span>
+    <span class="inline-flex mt-3 statusPemanas items-center px-2.5 py-0.5 rounded-md text-sm  bg-red-100 text-red-700 font-bold"> Off </span>
     <h3 class="mt-3 text-2xl">Temperatur Air: <span class="font-bold suhu">21</span>°C</h3>
   </div>
   <label for="price" class="block mt-3 text-sm font-bold text-white">Simulasikan Pemanasan Air</label>
@@ -119,12 +120,13 @@
     <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
     </div>
     <input type="text" name="price" id="inputSuhu" class="focus:ring-indigo-200 mb-3 focus:border-indigo-300 block w-full pl-7 pr-12 sm:text-sm border-white bg-gray-700 rounded-md" placeholder="0.00" aria-describedby="price-currency">
-    <p class="mt-2 text-sm hidden bg-red-100 py-2 mb-2 none text-red-800" id="errorSuhu">Tidak dapat memanaskan air diatas 40°C </p>
     <div class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none">
       <span class="text-gray-500 sm:text-sm" id="price-currency">°C</span>
     </div>
-    
+
   </div>
+  <p class="mt-2 text-sm hidden bg-red-100 py-2 mb-2 none text-red-800" id="errorSuhu">Tidak dapat memanaskan air diatas 41°C </p>
+
   <button type="button" onClick="setSuhu()" class="block mx-auto mb-3 items-center px-4 py-2 border border-transparent text-sm leading-4 font-medium rounded-md shadow-sm text-black bg-red-400 hover:bg-red-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500">Atur Temperatur Air</button>
   <button onClick="pemanasOn()" id="pemanasOn" type="button" class=" relative inline-flex items-center px-4 py-2 rounded-l-md  bg-red-400 text-sm font-medium text-gray-900 hover:bg-red-500 focus:z-10 focus:outline-none focus:ring-1 focus:ring-indigo-500  focus:border-indigo-500">Nyalakan Pemanas</button><button onClick="pemanasOff()" id="pemanasOff" type="button" class="-ml-px relative inline-flex items-center px-4 py-2 rounded-r-md   bg-black text-sm font-medium text-white hover:bg-gray-800 focus:z-10 focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500">Matikan Pemanas</button>
 </div>
@@ -229,14 +231,14 @@ function pemanasOff(){
 }
 
 function setSuhu(){
-  if(parseInt(document.getElementById("inputSuhu").value) <40){
+  if(parseInt(document.getElementById("inputSuhu").value) <41){
   suhu = parseInt(document.getElementById("inputSuhu").value)
   document.getElementsByClassName("suhu")[1].innerHTML = suhu;
   document.getElementById("errorSuhu").className = document.getElementById("errorAir").className.replace("good","hidden")
   document.getElementsByClassName("suhu")[0].innerHTML = suhu;
   if(suhu>20){
     pemanasOff()
-  }else if(sisaAir<40){
+  }else if(suhu<=41){
     pemanasOn()
   }
 }else{
