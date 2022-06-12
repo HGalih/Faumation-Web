@@ -184,6 +184,7 @@ var sisaAir = 25
 
 
 function airOn(){
+  airOff()
   if(sisaAir<90){
   document.getElementsByClassName("statusAir")[1].innerHTML = "On";
   document.getElementsByClassName("statusAir")[0].innerHTML = "On";
@@ -203,6 +204,7 @@ function airOn(){
 
 
 function pemanasOn(){
+  window.clearInterval(running2)
   if(suhu<41){
   document.getElementsByClassName("statusPemanas")[1].innerHTML = "On";
   document.getElementsByClassName("statusPemanas")[0].innerHTML = "On";
@@ -231,6 +233,7 @@ function pemanasOff(){
 }
 
 function setSuhu(){
+  window.clearInterval(running2)
   if(parseInt(document.getElementById("inputSuhu").value) <42){
   suhu = parseInt(document.getElementById("inputSuhu").value)
   document.getElementsByClassName("suhu")[1].innerHTML = suhu;
@@ -239,6 +242,7 @@ function setSuhu(){
   if(suhu>20){
     pemanasOff()
   }else if(suhu<=41){
+    
     pemanasOn()
   }
 }else{
@@ -249,9 +253,10 @@ function setSuhu(){
 
 
 function airOff(){
+ 
+  if(sisaAir>10){
   document.getElementById("airOn").className = document.getElementById("airOn").className.replace(airActive,airInactive)
   document.getElementById("airOff").className = document.getElementById("airOff").className.replace(airInactive,airActive)
-  if(sisaAir>10){
   window.clearInterval(running)
   window.clearInterval(running)
   window.clearInterval(running)
@@ -261,13 +266,15 @@ function airOff(){
 }
 
 function setAir(){
- 
+  window.clearInterval(running)
+
   if(parseInt(document.getElementById("inputAir").value) <91){
     sisaAir = parseInt(document.getElementById("inputAir").value)
     document.getElementById("errorAir").className = document.getElementById("errorAir").className.replace("good","hidden")
     document.getElementsByClassName("sisaAir")[1].innerHTML = sisaAir;
   document.getElementsByClassName("sisaAir")[0].innerHTML = sisaAir;
   if(sisaAir<90){
+    airOff()
     airOn()
   }else if(sisaAir>90){
     airOff()
