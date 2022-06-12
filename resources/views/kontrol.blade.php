@@ -55,7 +55,12 @@
   </div>
   
 </div>
+
 </div>
+
+</div>
+<div class="w-full" id="otomatis2">
+<button type="button" onClick="detectAll()" class="block mx-auto mb-3 items-center px-4 py-2 border border-transparent text-sm leading-4 font-medium rounded-md shadow-sm text-black bg-green-600 hover:bg-green-700 focus:outline-none mt-5 focus:ring-2 focus:ring-offset-2 focus:ring-white">Nyalakan Sistem Otomasi</button>
 </div>
 <!-- AKHIR OTOMATIS -->
 <!-- MANUAL -->
@@ -89,8 +94,8 @@
 
   
   <span class="relative z-0 mb-4 inline-flex shadow-sm rounded-md text-center">
-  <button onClick="airOn()" type="button" class="relative inline-flex items-center px-4 py-2 rounded-l-md  bg-blue-400 text-sm font-medium text-gray-900 hover:bg-blue-500 focus:z-10 focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500">Nyalakan Keran</button>
-<button onClick="airOff()" type="button" class="-ml-px relative inline-flex items-center px-4 py-2 rounded-r-md   bg-black text-sm font-medium text-white hover:bg-gray-800 focus:z-10 focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500">Matikan Keran</button>
+  <button onClick="airOn()" id="airOn" type="button" class="relative inline-flex items-center px-4 py-2 rounded-l-md  bg-blue-400 text-sm font-medium text-gray-900 hover:bg-blue-500 focus:z-10 focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500">Nyalakan Keran</button>
+<button onClick="airOff()" id="airOff" type="button" class="-ml-px relative inline-flex items-center px-4 py-2 rounded-r-md   bg-black text-sm font-medium text-white hover:bg-gray-800 focus:z-10 focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500">Matikan Keran</button>
 </span>
 </div>
 
@@ -121,7 +126,7 @@
     
   </div>
   <button type="button" onClick="setSuhu()" class="block mx-auto mb-3 items-center px-4 py-2 border border-transparent text-sm leading-4 font-medium rounded-md shadow-sm text-black bg-red-400 hover:bg-red-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500">Atur Temperatur Air</button>
-  <button onClick="pemanasOn()" type="button" class="relative inline-flex items-center px-4 py-2 rounded-l-md  bg-blue-400 text-sm font-medium text-gray-900 hover:bg-blue-500 focus:z-10 focus:outline-none focus:ring-1 focus:ring-indigo-500  focus:border-indigo-500">Nyalakan Pemanas</button><button onClick="pemanasOff()" type="button" class="-ml-px relative inline-flex items-center px-4 py-2 rounded-r-md   bg-black text-sm font-medium text-white hover:bg-gray-800 focus:z-10 focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500">Matikan Pemanas</button>
+  <button onClick="pemanasOn()" id="pemanasOn" type="button" class=" relative inline-flex items-center px-4 py-2 rounded-l-md  bg-red-400 text-sm font-medium text-gray-900 hover:bg-red-500 focus:z-10 focus:outline-none focus:ring-1 focus:ring-indigo-500  focus:border-indigo-500">Nyalakan Pemanas</button><button onClick="pemanasOff()" id="pemanasOff" type="button" class="-ml-px relative inline-flex items-center px-4 py-2 rounded-r-md   bg-black text-sm font-medium text-white hover:bg-gray-800 focus:z-10 focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500">Matikan Pemanas</button>
 </div>
 
 
@@ -135,6 +140,7 @@
 <script>
 function openCity(evt, tabName) {
   var i, tabcontent, tablinks;
+  
   tabcontent = document.getElementsByClassName("tabcontent");
   for (i = 0; i < tabcontent.length; i++) {
     tabcontent[i].style.display = "none";
@@ -146,12 +152,26 @@ function openCity(evt, tabName) {
   document.getElementById(tabName).style.display = "grid";
   evt.currentTarget.className += " bg-indigo-700 text-white";
   evt.currentTarget.className = evt.currentTarget.className.replace("text-indigo-300","")
+  if(tabName == "manual"){
+    document.getElementById("otomatis2").style.display = "none"
+    console.log("manual")
+  }else if(tabName == "otomatis"){
+    document.getElementById("otomatis2").style.display = "block"
+    console.log("block")
+  }
 }
 </script>
 
 
 <script>
-  var sisaAir = 25
+  var airActive = "bg-blue-400 text-sm font-medium text-gray-900 hover:bg-blue-500 focus:z-10 focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500"
+var airInactive = "bg-black text-sm font-medium text-white hover:bg-gray-800 focus:z-10 focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500"
+var pemanasActive =  "bg-red-400 text-sm font-medium text-gray-900 hover:bg-red-500 focus:z-10 focus:outline-none focus:ring-1 focus:ring-indigo-500  focus:border-indigo-500"
+var pemanasInactive = "bg-black text-sm font-medium text-white hover:bg-gray-800 focus:z-10 focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500"
+airOff()
+document.getElementById("pemanasOff").className = document.getElementById("pemanasOff").className.replace(pemanasInactive,pemanasActive)
+  document.getElementById("pemanasOn").className = document.getElementById("pemanasOn").className.replace(pemanasActive,pemanasInactive)
+var sisaAir = 25
   var suhu = 20
   document.getElementsByClassName("sisaAir")[1].innerHTML = sisaAir;
   document.getElementsByClassName("sisaAir")[0].innerHTML = sisaAir;
@@ -162,12 +182,13 @@ function openCity(evt, tabName) {
 
 
 function airOn(){
-  if(sisaAir<91){
+  if(sisaAir<90){
   document.getElementsByClassName("statusAir")[1].innerHTML = "On";
   document.getElementsByClassName("statusAir")[0].innerHTML = "On";
-  
+  document.getElementById("airOff").className = document.getElementById("airOff").className.replace(airActive,airInactive)
+  document.getElementById("airOn").className = document.getElementById("airOn").className.replace(airInactive,airActive)
   running = window.setInterval(function () {
-  if(sisaAir<91){  
+  if(sisaAir<90){  
   sisaAir = sisaAir + 0.5;
   document.getElementsByClassName("sisaAir")[1].innerHTML = sisaAir;
   document.getElementsByClassName("sisaAir")[0].innerHTML = sisaAir;
@@ -183,7 +204,8 @@ function pemanasOn(){
   if(suhu<41){
   document.getElementsByClassName("statusPemanas")[1].innerHTML = "On";
   document.getElementsByClassName("statusPemanas")[0].innerHTML = "On";
-  
+  document.getElementById("pemanasOff").className = document.getElementById("pemanasOff").className.replace(pemanasActive,pemanasInactive)
+  document.getElementById("pemanasOn").className = document.getElementById("pemanasOn").className.replace(pemanasInactive,pemanasActive)
   running2 = window.setInterval(function () {
   if(suhu<41){  
   suhu = suhu + 0.5;
@@ -197,7 +219,9 @@ function pemanasOn(){
 }
 
 function pemanasOff(){
-  if(suhu>20){
+  if(suhu>19){
+  document.getElementById("pemanasOff").className = document.getElementById("pemanasOff").className.replace(pemanasInactive,pemanasActive)
+  document.getElementById("pemanasOn").className = document.getElementById("pemanasOn").className.replace(pemanasActive,pemanasInactive)
   window.clearInterval(running2)
   document.getElementsByClassName("statusPemanas")[1].innerHTML = "Off";
   document.getElementsByClassName("statusPemanas")[0].innerHTML = "Off";
@@ -223,6 +247,8 @@ function setSuhu(){
 
 
 function airOff(){
+  document.getElementById("airOn").className = document.getElementById("airOn").className.replace(airActive,airInactive)
+  document.getElementById("airOff").className = document.getElementById("airOff").className.replace(airInactive,airActive)
   if(sisaAir>10){
   window.clearInterval(running)
   document.getElementsByClassName("statusAir")[1].innerHTML = "Off";
@@ -237,10 +263,10 @@ function setAir(){
     document.getElementById("errorAir").className = document.getElementById("errorAir").className.replace("good","hidden")
     document.getElementsByClassName("sisaAir")[1].innerHTML = sisaAir;
   document.getElementsByClassName("sisaAir")[0].innerHTML = sisaAir;
-  if(sisaAir>10){
-    airOff()
-  }else if(sisaAir<90){
+  if(sisaAir<90){
     airOn()
+  }else if(sisaAir>90){
+    airOff()
   }
   }else{
     document.getElementById("errorAir").className = document.getElementById("errorAir").className.replace("hidden","good")
@@ -249,6 +275,18 @@ function setAir(){
 }
 
 
+function detectAll(){
+  if(sisaAir<90){
+    airOn()
+  }else if(sisaAir>90){
+    airOff()
+  }
 
+  if(suhu<41){
+    pemanasOn()
+  }else if(suhu>41){
+    pemanasOff()
+  }
+}
 
   </script>
