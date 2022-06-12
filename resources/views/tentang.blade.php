@@ -48,10 +48,9 @@
                                         kendali otomatis maupun manual.</li>
                                     <li>Dasbor -> Menampilkan data konsumsi air dalam satuan liter melalui Bar Chart
                                         “Pengisian Air” beserta durasi waktu menyalakan Pemanas Air dalam satuan jam
-                                        melalui Line Chart “Pemanas Air”.</li>
+                                        melalui Bar Chart “Pemanas Air”.</li>
                                     <li>Profil -> Menampilkan profil akun pengguna meliputi Nama Lengkap, Surel, Kata
-                                        Sandi, Autentikasi Dua Faktor, Manajemen Sesi Aktif dari peramban maupun
-                                        perangkat lain, dan penghapusan akun.</li>
+                                        Sandi, dan Manajemen Sesi Aktif dari peramban maupun perangkat lain.</li>
                                     <li>Tentang -> Menampilkan informasi lebih lanjut seputar proyek Faumation. </li>
                                 </ul>
                             </div>
