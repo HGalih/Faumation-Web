@@ -3,7 +3,7 @@
     <x-slot:heading>Kontrol</x-slot>
     <x-slot:subheading>Nikmati kendali yang praktis.</x-slot>
     <x-slot:content>
-    <div>
+    <div class="mb-5">
   <div class="sm:hidden">
     <label for="tabs" class="sr-only">Select a tab</label>
     <!-- Use an "onChange" listener to redirect the user to the selected tab URL. -->
@@ -20,7 +20,7 @@
   <div class="hidden sm:block">
     <nav class="flex space-x-4 justify-center mb-6" aria-label="Tabs">
       <!-- Current: "bg-gray-100 text-gray-700", Default: "text-gray-500 hover:text-gray-700" -->
-      <a href="#" onclick="openCity(event,'otomatis')" class="text-indigo-300 tablinks bg-gray-900 hover:text-gray-700 px-3  py-2 font-medium text-sm rounded-md"> Kendali Otomatis </a>
+      <a href="#" onclick="openCity(event,'otomatis')" class="tablinks bg-gray-900 bg-indigo-700 text-white hover:text-gray-700 px-3  py-2 font-medium text-sm rounded-md"> Kendali Otomatis </a>
 
       <a href="#" onclick="openCity(event,'manual')" class="text-indigo-300 tablinks  bg-gray-900 hover:text-gray-700 px-3 py-2 font-medium text-sm rounded-md"> Kendali Manual </a>
     </nav>
@@ -60,7 +60,7 @@
 
 </div>
 <div class="w-full" id="otomatis2">
-<button type="button" onClick="detectAll()" class="block mx-auto mb-3 items-center px-4 py-2 border border-transparent text-sm leading-4 font-medium rounded-md shadow-sm text-black bg-green-600 hover:bg-green-700 focus:outline-none mt-5 focus:ring-2 focus:ring-offset-2 focus:ring-white">Nyalakan Sistem Otomasi</button>
+<button type="button" onClick="detectAll()" class="block mx-auto mb-3 items-center px-4 py-2 border border-transparent text-sm leading-4 font-medium rounded-md shadow-sm text-white bg-green-600 hover:bg-green-700 focus:outline-none mt-5 focus:ring-2 focus:ring-offset-2 focus:ring-white">Nyalakan Sistem Otomasi</button>
 </div>
 <!-- AKHIR OTOMATIS -->
 <!-- MANUAL -->

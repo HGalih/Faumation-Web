@@ -1099,6 +1099,9 @@ select {
 .ml-5 {
   margin-left: 1.25rem;
 }
+.mb-5 {
+  margin-bottom: 1.25rem;
+}
 .block {
   display: block;
 }
