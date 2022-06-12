@@ -15,7 +15,12 @@ use Illuminate\Support\Facades\Route;
 
 
 
-Route::group([ "middleware" => ['auth:sanctum', 'verified'] ], function() {
+
+Route::middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified'
+])->group(function () {
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
@@ -29,7 +34,4 @@ Route::group([ "middleware" => ['auth:sanctum', 'verified'] ], function() {
     })->name('tentang');
     Route::view('/dashboard', "dashboard")->name('dashboard');
 
-    Route::get('/user', [ UserController::class, "index_view" ])->name('user');
-    Route::view('/user/new', "pages.user.user-new")->name('user.new');
-    Route::view('/user/edit/{userId}', "pages.user.user-edit")->name('user.edit');
 });

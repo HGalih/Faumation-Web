@@ -2,26 +2,29 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
-    @livewireStyles
+<meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    @php
-        $activePage = basename($_SERVER['PHP_SELF'], '.php');
-    @endphp
-    <!-- Scripts -->
-    <script src="{{ mix('js/app.js') }}" defer></script>
-    <!-- Styles -->
-    <link rel="stylesheet" href="{{ mix('css/app.css') }}">
+        <title>{{ config('app.name', 'Laravel') }}</title>
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
+
+        <!-- Styles -->
+        <link rel="stylesheet" href="{{ mix('css/app.css') }}">
+
+        @livewireStyles
+
+        <!-- Scripts -->
+        <script src="{{ mix('js/app.js') }}" defer></script>
     <link rel="icon" href="{{ asset('img/favicon.ico?v=2') }}" type="image/ico" />
 
     <title>Faumation</title>
 </head>
-
+@php
+        $activePage = basename($_SERVER['PHP_SELF'], '.php');
+@endphp
 <body class="bg-gray-800">
     <!-- This example requires Tailwind CSS v2.0+ -->
     <!--
@@ -255,3 +258,4 @@
 </body>
 
 </html>
+@livewireScripts
