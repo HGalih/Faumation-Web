@@ -231,7 +231,7 @@ function pemanasOff(){
 }
 
 function setSuhu(){
-  if(parseInt(document.getElementById("inputSuhu").value) <41){
+  if(parseInt(document.getElementById("inputSuhu").value) <42){
   suhu = parseInt(document.getElementById("inputSuhu").value)
   document.getElementsByClassName("suhu")[1].innerHTML = suhu;
   document.getElementById("errorSuhu").className = document.getElementById("errorAir").className.replace("good","hidden")
