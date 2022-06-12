@@ -22,7 +22,8 @@ return new class extends Migration
                 ->cascadeOnDelete()
                 ->cascadeOnUpdate();
             $table->integer('current_temperature');
-            $table->timestamps();
+            // $table->timestamps();
+            $table->timestamp('time');
         });
     }
 
