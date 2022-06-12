@@ -173,7 +173,7 @@ var pemanasInactive = "bg-black text-sm font-medium text-white hover:bg-gray-800
 airOff()
 document.getElementById("pemanasOff").className = document.getElementById("pemanasOff").className.replace(pemanasInactive,pemanasActive)
   document.getElementById("pemanasOn").className = document.getElementById("pemanasOn").className.replace(pemanasActive,pemanasInactive)
-var sisaAir = 25
+var sisaAir = 11
   var suhu = 20
   document.getElementsByClassName("sisaAir")[1].innerHTML = sisaAir;
   document.getElementsByClassName("sisaAir")[0].innerHTML = sisaAir;
