@@ -253,6 +253,8 @@ function airOff(){
   document.getElementById("airOff").className = document.getElementById("airOff").className.replace(airInactive,airActive)
   if(sisaAir>10){
   window.clearInterval(running)
+  window.clearInterval(running)
+  window.clearInterval(running)
   document.getElementsByClassName("statusAir")[1].innerHTML = "Off";
   document.getElementsByClassName("statusAir")[0].innerHTML = "Off";
   }
