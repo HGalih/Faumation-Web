@@ -14,8 +14,7 @@
                                     Internet of Things dengan topik "Sistem Pemantauan Ketinggian Air dan Pemanas
                                     Temperatur Air dengan Otomasi Keran Berbasis Internet of Things Melalui Web
                                     Menggunakan Modul Arduino Uno R3 V2.0 Pada Penampungan Air Warga". Faumation
-                                    tersedia dalam bentuk simulasi Proteus maupun simulasi dalam bentuk Website
-                                    Faumation yang dapat diakses melalui Web Browser.
+                                    tersedia dalam bentuk simulasi Proteus maupun simulasi dalam bentuk Aplikasi Web yang dapat diakses melalui Web Browser.
                                 </p>
                                 <br>
                                 <h1 class="font-bold">Manfaat Penggunaan Faumation:</h1>

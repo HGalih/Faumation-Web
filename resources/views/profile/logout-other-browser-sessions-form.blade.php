@@ -52,7 +52,14 @@
         @endif
 
         <div class="flex items-center mt-5">
-            <x-jet-button wire:click="confirmLogout" wire:loading.attr="disabled">
+        <form method="POST" action="{{ route('logout') }}" x-data>
+                                @csrf
+                        
+                        <x-jet-button class="bg-red-400 text-white hover:bg-red-500 mr-3" href="{{ route('logout') }}" @click.prevent="$root.submit();">
+                {{ __('Logout dari perangkat ini') }}
+            </x-jet-button>
+                            </form>
+            <x-jet-button wire:click="confirmLogout" class="text-white bg-transparent border border-white hover:text-black" style="color:white" wire:loading.attr="disabled">
                 {{ __('Keluar dari sesi browser lain') }}
             </x-jet-button>
 
@@ -82,11 +89,11 @@
             </x-slot>
 
             <x-slot name="footer">
-                <x-jet-secondary-button wire:click="$toggle('confirmingLogout')" wire:loading.attr="disabled">
+                <x-jet-secondary-button class="bg-transparent text-white" wire:click="$toggle('confirmingLogout')" wire:loading.attr="disabled">
                     {{ __('Cancel') }}
                 </x-jet-secondary-button>
 
-                <x-jet-button class="ml-3"
+                <x-jet-button class="ml-3 bg-red-400 text-white hover:bg-red-500"
                             wire:click="logoutOtherBrowserSessions"
                             wire:loading.attr="disabled">
                     {{ __('Log Out Other Browser Sessions') }}
