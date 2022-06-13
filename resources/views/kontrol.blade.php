@@ -28,7 +28,7 @@
 </div>
 <div class="text-center mb-5 "><span>Pilih Tempat Pemakaian:</span><select  class="ml-2 rounded-xl bg-transparent border border-white text-white">
   @foreach (Auth::user()->tools as $tool)
-<option  href="javascript:window.location.href=window.location.href">
+<option class="text-black" href="javascript:window.location.href=window.location.href">
  {{$tool->description}}
 </option>
 @endforeach

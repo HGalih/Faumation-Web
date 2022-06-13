@@ -4,8 +4,8 @@
     <x-slot:content>
     <div class="text-right">Pilih Tanggal
     <select id="options" onChange="setData(this.value)" class="ml-2 rounded-xl bg-transparent border border-white text-white">
-    <option value=2>Hari Ini</option>
-    <option value=1>Kemarin</option>
+    <option class="text-black" value=2>Hari Ini</option>
+    <option class="text-black" value=1>Kemarin</option>
     </select></div>
     <div class="bg-gray-700 text-center shadow overflow-hidden mt-3 sm:rounded-lg p-11">
         <h1 class="text-center font-bold text-white">Sisa Air Setiap 3 Menit (%)</h1>
