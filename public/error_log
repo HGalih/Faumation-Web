@@ -1,0 +1,45 @@
+[12-Jun-2022 15:15:26 UTC] PHP Warning:  require(/home/archotec/public_html/faumation/public/../vendor/autoload.php): Failed to open stream: No such file or directory in /home/archotec/public_html/faumation/public/index.php on line 34
+[12-Jun-2022 15:15:26 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/archotec/public_html/faumation/public/../vendor/autoload.php' (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home/archotec/public_html/faumation/public/index.php:34
+Stack trace:
+#0 {main}
+  thrown in /home/archotec/public_html/faumation/public/index.php on line 34
+[12-Jun-2022 15:15:28 UTC] PHP Warning:  require(/home/archotec/public_html/faumation/public/../vendor/autoload.php): Failed to open stream: No such file or directory in /home/archotec/public_html/faumation/public/index.php on line 34
+[12-Jun-2022 15:15:28 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/archotec/public_html/faumation/public/../vendor/autoload.php' (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home/archotec/public_html/faumation/public/index.php:34
+Stack trace:
+#0 {main}
+  thrown in /home/archotec/public_html/faumation/public/index.php on line 34
+[12-Jun-2022 15:15:35 UTC] PHP Warning:  require(/home/archotec/public_html/faumation/public/../vendor/autoload.php): Failed to open stream: No such file or directory in /home/archotec/public_html/faumation/public/index.php on line 34
+[12-Jun-2022 15:15:35 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/archotec/public_html/faumation/public/../vendor/autoload.php' (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home/archotec/public_html/faumation/public/index.php:34
+Stack trace:
+#0 {main}
+  thrown in /home/archotec/public_html/faumation/public/index.php on line 34
+[12-Jun-2022 15:15:39 UTC] PHP Warning:  require(/home/archotec/public_html/faumation/public/../vendor/autoload.php): Failed to open stream: No such file or directory in /home/archotec/public_html/faumation/public/index.php on line 34
+[12-Jun-2022 15:15:39 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/archotec/public_html/faumation/public/../vendor/autoload.php' (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home/archotec/public_html/faumation/public/index.php:34
+Stack trace:
+#0 {main}
+  thrown in /home/archotec/public_html/faumation/public/index.php on line 34
+[12-Jun-2022 15:15:41 UTC] PHP Warning:  require(/home/archotec/public_html/faumation/public/../vendor/autoload.php): Failed to open stream: No such file or directory in /home/archotec/public_html/faumation/public/index.php on line 34
+[12-Jun-2022 15:15:41 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/archotec/public_html/faumation/public/../vendor/autoload.php' (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home/archotec/public_html/faumation/public/index.php:34
+Stack trace:
+#0 {main}
+  thrown in /home/archotec/public_html/faumation/public/index.php on line 34
+[12-Jun-2022 15:15:44 UTC] PHP Warning:  require(/home/archotec/public_html/faumation/public/../vendor/autoload.php): Failed to open stream: No such file or directory in /home/archotec/public_html/faumation/public/index.php on line 34
+[12-Jun-2022 15:15:44 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/archotec/public_html/faumation/public/../vendor/autoload.php' (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home/archotec/public_html/faumation/public/index.php:34
+Stack trace:
+#0 {main}
+  thrown in /home/archotec/public_html/faumation/public/index.php on line 34
+[12-Jun-2022 15:16:55 UTC] PHP Warning:  require(/home/archotec/public_html/public/../vendor/autoload.php): Failed to open stream: No such file or directory in /home/archotec/public_html/public/index.php on line 34
+[12-Jun-2022 15:16:55 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/archotec/public_html/public/../vendor/autoload.php' (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home/archotec/public_html/public/index.php:34
+Stack trace:
+#0 {main}
+  thrown in /home/archotec/public_html/public/index.php on line 34
+[12-Jun-2022 15:17:30 UTC] PHP Warning:  require(/home/archotec/public_html/public/../vendor/autoload.php): Failed to open stream: No such file or directory in /home/archotec/public_html/public/index.php on line 34
+[12-Jun-2022 15:17:30 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/archotec/public_html/public/../vendor/autoload.php' (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home/archotec/public_html/public/index.php:34
+Stack trace:
+#0 {main}
+  thrown in /home/archotec/public_html/public/index.php on line 34
+[12-Jun-2022 15:18:50 UTC] PHP Warning:  require(/home/archotec/public_html/public/../vendor/autoload.php): Failed to open stream: No such file or directory in /home/archotec/public_html/public/index.php on line 36
+[12-Jun-2022 15:18:50 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/archotec/public_html/public/../vendor/autoload.php' (include_path='.:/opt/alt/php81/usr/share/pear:/opt/alt/php81/usr/share/php:/usr/share/pear:/usr/share/php') in /home/archotec/public_html/public/index.php:36
+Stack trace:
+#0 {main}
+  thrown in /home/archotec/public_html/public/index.php on line 36
